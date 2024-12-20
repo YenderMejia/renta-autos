@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renta E-Car - Recuperar Contraseña</title>
+    <link rel="stylesheet" href="recuperar.css">
+</head>
+<body>
+    <div class="container">
+        <form action="recuperar.php" method="POST" id="recuperar-form" class="recuperar-form">
+            <h1>Renta E-Car - Recuperar Contraseña</h1>
+            
+            <!-- Paso 1: Ingreso de correo y captcha -->
+            <div id="step-1" class="form-step">
+                <div class="form-group">
+                    <input type="email" name="correo" id="correo" required placeholder="Correo electrónico para recuperar contraseña">
+                </div>
+                <div class="captcha-container">
+                    <div class="captcha" id="captcha"></div>
+                    <input type="text" id="captcha-input" name="captcha-input" required placeholder="Ingrese el captcha">
+                    <input type="hidden" id="captcha-hidden" name="captcha-hidden">
+                </div>
+                <button type="submit" id="next-step" onclick="checkCorreoCaptcha()">Siguiente</button>
+            </div>
+            
+            <!-- Paso 2: Pregunta de seguridad y nueva contraseña -->
+            <div id="step-2" class="form-step" style="display:none;">
+                <div class="form-group">
+                    <label for="pregunta-seguridad">Pregunta de seguridad</label>
+                    <br>
+                    <input type="text" name="pregunta-seguridad" id="pregunta-seguridad" required placeholder="Respuesta a la pregunta de seguridad">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="nueva-contraseña" id="nueva-contraseña" required placeholder="Nueva contraseña">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="confirmar-contraseña" id="confirmar-contraseña" required placeholder="Confirmar nueva contraseña">
+                </div>
+                <button type="submit">Actualizar Contraseña</button>
+            </div>
+
+            <div class="links">
+                <a href="login.html">Volver al login</a>
+            </div>
+        </form>
+    </div>
+    
+    <script src="captcha.js"></script>
+    <script src="recuperar.js"></script>
+</body>
+</html>
+

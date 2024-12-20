@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Vehículos</title>
+  <link rel="stylesheet" href="vehiculoscliente.css">
+</head>
+<body>
+  <header>
+    <h1>Gestión de Vehículos</h1>
+    <a href="portal.html" class="logout-btn">Volver</a>
+  </header>
+  <main>
+    <div class="content">
+      <h2>Listado de Vehículos</h2>
+      <div class="filters">
+        <select id="filter-category" onchange="filterVehicles()">
+          <option value="">Todas las categorías</option>
+        </select>
+        <input type="text" id="search-plate" placeholder="Buscar por placa" oninput="filterVehicles()">
+        <select id="filter-status" onchange="filterVehicles()">
+          <option value="">Todos los estados</option>
+          <option value="ocupado">Ocupado</option>
+          <option value="desocupado">Desocupado</option>
+        </select>
+      </div>
+      <div id="vehicle-list" class="vehicle-list">
+        <!-- Vehículos cargados dinámicamente aquí -->
+      </div>
+      <div id="occupied-vehicles" class="vehicle-list">
+        <!-- Vehículos ocupados cargados dinámicamente aquí -->
+      </div>      
+    </div>
+  </main>
+  <script src="vistavehiculos_clientes.js"></script>
+</body>
+</html>

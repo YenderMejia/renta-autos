@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajería - Sistema de Autos Eléctricos Compartidos</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="chat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mensajería - Sistema de Autos Eléctricos Compartidos</h1>
+            <nav>
+                <ul>
+                    <li><a href="portal.html">Inicio</a></li>
+                    <li><a href="vehiculosclientes.html">Autos Disponibles</a></li>
+                    <li><a href="editarperfil.html">Mi Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="mensajeria">
+                <div class="busqueda-conversaciones">
+                    <input type="text" id="buscarUsuario" placeholder="Buscar usuarios...">
+                </div>
+                <div class="contenido-mensajeria">
+                    <aside class="lista-conversaciones">
+                        <!-- Aquí se llenará dinámicamente la lista de usuarios -->
+                    </aside>
+                    <section class="area-chat">
+                        <header class="cabecera-chat">
+                            <div class="info-contacto">
+                                <img id="fotoUsuario" src="default-avatar.png" alt="Avatar del contacto" class="avatar">
+                                <h3 id="nombreUsuario">Selecciona un usuario</h3>
+                            </div>
+                        </header>
+                        <div class="mensajes-chat" id="mensajesChat">
+                            <!-- Aquí se llenarán dinámicamente los mensajes -->
+                        </div>
+                        <footer class="entrada-mensaje">
+                            <input type="text" id="inputMensaje" placeholder="Escribe un mensaje...">
+                            <button id="botonEnviar"><i class="fas fa-paper-plane"></i></button>
+                        </footer>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </main> 
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sistema de Autos Eléctricos Compartidos</p>
+        </div>
+    </footer>
+</body>
+</html>

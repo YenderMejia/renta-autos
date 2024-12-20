@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interfaz Cool - Autos Compartidos</title>
+  <link rel="stylesheet" href="portal.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="portal.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <!-- Menú Superior -->
+    <header class="header">
+      <div class="profile-section">
+        <img id="user-photo" alt="Foto de perfil" class="profile-pic">
+        <div class="profile-info">
+          <h2>Hola Bienvenid@ <span id="user-name">Usuario</span></h2>
+          <p><span id="user-email">No disponible</span></p>
+          <button class="edit-profile-btn" onclick="location.href='editarperfil.html'"><i class="fas fa-edit"></i> Editar Perfil</button>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href="chat.html"><i class="fas fa-comments"></i> Chat</a>
+        <a href="generate_invoice.php" target="_blank" id="reservations-btn"><i class="fas fa-car-side"></i> Ver Reservas</a>
+        <a href="#support"><i class="fas fa-headset"></i> Soporte</a>
+        <a href="nosotros.html"><i class="fas fa-question-circle"></i> Sobre Nosotros</a>
+        <!-- Botón de notificaciones -->
+        <button class="notifications-btn" onclick="toggleNotifications()">
+            <i class="fas fa-bell"></i>
+          </button>
+        <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+      </nav>
+    </header>
+    <!-- Ventana de Notificaciones -->
+    <div class="notifications-window" id="notifications-window">
+        <button class="close-btn" onclick="closeNotifications()">✖</button>
+        <h3>Notificaciones</h3>
+        <ul id="notifications-list">
+          <li>Cargando notificaciones...</li>
+      </ul>
+    </div>
+    <!-- Contenido Principal -->
+    <main class="content">
+      <!-- Reservas -->
+      <section id="reserve">
+        <h2>Reservas</h2>
+        <div class="card-group">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScWypfXiwcg2Ot8f6Iv6wgeJaMxK7hrk7WWA&s" alt="Reservar Auto">
+            <h3>Reservar Auto</h3>
+            <p>Reserva tu auto favorito para tu próximo viaje.</p>
+            <button class="btn" onclick="location.href='vehiculosclientes.html'"><i class="fas fa-car"></i> Reservar</button>
+          </div>
+          <div class="card">
+            <img src="https://img.freepik.com/vector-premium/concepto-compra-o-alquiler-nuevo-coche-rojo-vendedor-o-dueno-nueva-maquina-ilustracion-estilo-plano-moderno-aislado_195647-28.jpg?w=360" alt="Cancelar Reserva">
+            <h3>Cancelar Reserva</h3>
+            <p>Cancela una reserva existente fácilmente.</p>
+            <button class="btn" onclick="location.href='cancelar_alquiler.html'">
+              <i class="fas fa-times-circle"></i> Cancelar
+            </button>            
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <div class="container">
+        <p>&copy; 2024 Autos Eléctricos Compartidos S.A.</p>
+    </div>
+</footer>
+</body>
+</html>

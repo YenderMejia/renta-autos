@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquilar Vehículo</title>
+    <link rel="stylesheet" href="alquilar.css">
+</head>
+<body>
+    <main class="container">
+        <div class="vehicle-details" id="vehicle-details"></div>
+        <form id="rental-form">
+            <h3>Formulario de Alquiler</h3>
+            <label for="payment-type">Tipo de Pago:</label>
+            <select id="payment-type" name="payment-type" required>
+                <option value="efectivo">Efectivo</option>
+                <option value="tarjeta">Tarjeta</option>
+                <option value="paypal">PayPal</option>
+            </select>
+            
+            <label for="start-date">Fecha de Inicio:</label>
+            <input type="date" id="start-date" name="start-date" required min="<?= date('Y-m-d') ?>">
+
+            <label for="end-date">Fecha de Fin:</label>
+            <input type="date" id="end-date" name="end-date" required>
+
+            <p id="total-amount">Monto Total: $0.00</p>
+
+            <div class="button-group">
+                <button type="submit">Confirmar Alquiler</button>
+                <button type="button" onclick="goBack()">Volver</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="alquilar.js"></script>
+</body>
+</html>

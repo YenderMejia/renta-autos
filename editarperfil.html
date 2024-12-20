@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil</title>
+  <link rel="stylesheet" href="editarperfil.css">
+  <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="editarperfil.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <div class="header">
+      <h2>Editar Perfil</h2>
+      <button class="logout-btn" onclick="location.href='portal.html'">Volver al Inicio</button>
+    </div>
+    <div class="content" style="display: flex; gap: 20px;">
+      <!-- Formulario de Edición -->
+      <form id="editarPerfilForm" enctype="multipart/form-data" class="edit-form" style="flex: 1;">
+        <h2>Editar Información</h2>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nuevo nombre">
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="Ingrese su nuevo correo">
+        </div>
+        <div class="form-group">
+          <label for="clave-actual">Clave Actual</label>
+          <input type="password" id="clave-actual" name="clave_actual" placeholder="Ingrese su clave actual">
+        </div>
+        <div class="form-group">
+          <label for="nueva-clave">Nueva Clave</label>
+          <input type="password" id="nueva-clave" name="nueva_clave" placeholder="Ingrese su nueva clave">
+        </div>
+        <div class="form-group">
+          <label for="confirmar-clave">Confirmar Nueva Clave</label>
+          <input type="password" id="confirmar-clave" name="confirmar_clave" placeholder="Confirme su nueva clave">
+        </div>
+        <div class="form-group">
+          <label for="foto">Foto de Perfil</label>
+          <input type="file" id="foto" name="foto">
+        </div>
+        <div class="form-group">
+          <label for="pregunta">Pregunta Clave</label>
+          <input type="text" id="pregunta" name="pregunta" placeholder="Ingrese una pregunta clave">
+        </div>
+        <div class="form-group">
+          <label for="respuesta">Respuesta Clave</label>
+          <input type="text" id="respuesta" name="respuesta" placeholder="Ingrese la respuesta clave (una palabra)">
+        </div>
+        <button type="submit" class="btn">Guardar Cambios</button>
+      </form>
+      <div id="mensaje" style="display:none; color: green;"></div>
+      <!-- Datos Actuales -->
+      <section class="datos-actuales-container" style="flex: 1;">
+        <div class="datos-actuales">
+            <h2>Datos Actuales</h2>
+            <div class="dato">
+            <strong>Nombre:</strong> <span id="nombre-actual"></span>
+            </div>
+            <div class="dato">
+            <strong>Correo:</strong> <span id="correo-actual"></span>
+            </div>
+            <div class="dato">
+            <strong>Pregunta de seguridad:</strong> <span id="pregunta-actual"></span>
+            </div>
+            <div class="dato">
+            <strong>Foto de Perfil:</strong><br>
+            <img id="foto-actual" alt="Foto de perfil" style="width: 100px; border-radius: 50%;">
+            </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

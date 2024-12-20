@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renta E-Car - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="login.php" method="POST" class="login-form">
+            <h1>Renta E-Car</h1>
+            <div class="form-group">
+                <input type="email" name="correo" required placeholder="Correo electrónico">
+            </div>
+            <div class="form-group">
+                <input type="password" name="clave" required placeholder="Contraseña">
+            </div>
+            <div class="captcha-container">
+                <div class="captcha" id="captcha"></div>
+                <input type="text" id="captcha-input" name="captcha-input" required placeholder="Ingrese el captcha">
+                <input type="hidden" id="captcha-hidden" name="captcha-hidden">
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+            <div class="links">
+                <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+                <a href="register.html">Registrarse</a>
+            </div>
+        </form>
+    </div>
+    <script src="captcha.js"></script>
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', async function (e) {
+            e.preventDefault(); // Prevenir el envío normal del formulario
+    
+            const formData = new FormData(this);
+    
+            try {
+                const response = await fetch('login.php', {
+                    method: 'POST',
+                    body: formData
+                });
+    
+                const result = await response.json();
+    
+                if (result.success) {
+                    // Guardar el token en el localStorage
+                    localStorage.setItem('authToken', result.token);
+    
+                    // Redirigir según el rol
+                    window.location.href = result.redirect;
+                } else {
+                    // Manejar errores
+                    alert('Error: ' + (result.error || 'Usuario inactivo'));
+                }
+            } catch (error) {
+                console.error('Error en la conexión:', error);
+                alert('Hubo un error al intentar iniciar sesión.');
+            }
+        });
+    </script>    
+</body>
+</html>
